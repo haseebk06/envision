@@ -1,0 +1,64 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #004F68;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+@font-face {
+    font-family: envision sans;
+    src: url('./fonts/Helvetica.ttf');
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+.hero-txt-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hero {
+    background: #007ba6;
+    position: relative;
+    padding: 1.5rem;
+}
+
+.hero-img-wrapper {
+    position: absolute;
+    right: 5rem;
+    bottom: -12rem;
+}
+
+section {
+    height: 100vh;
+}
+
+.hero h1 {
+    font-family: envsion sans, sans-serif;
+    font-size: clamp(2.25rem, -6.7734rem + 30.0781vw, 11.875rem);
+    color: #fff;
+    font-weight: 400;
+    line-height: 218px;
+}

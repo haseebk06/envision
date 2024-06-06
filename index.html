@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+    <title>Envision</title>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-txt-wrapper">
+            <h1 class="hero-txt">Envision...</h1>
+        </div>
+
+        <div class="hero-img-wrapper">
+            <img class="horo-img" src="./img/minging.svg" alt="image">
+        </div>
+    </section>
+
+    <section class="sec-two">
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+        const lenis = new Lenis()
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger)
+            // gsap code here!
+        });
+    </script>
+</body>
+
+</html>
