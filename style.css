@@ -72,7 +72,11 @@
         position: absolute;
         right: 0;
         bottom: -30rem;
-    }   
+    }  
+    
+    .scene-one-wrapper {
+        position: relative;
+    }
 
     .hero h1 {
         font-family: envsion sans, sans-serif;
@@ -92,7 +96,7 @@
     .mining-txt-wrapper {
         width: 473px;
         position: absolute;
-        top: 20rem;
+        top: 12rem;
         overflow: hidden;
     }
 
@@ -108,4 +112,10 @@
 
     .sec-three {
         height: 100vh;
+    }
+
+    .connecting {
+        background: var(--white);
+        width: 1px;
+        height: 1rem;
     }
