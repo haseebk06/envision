@@ -73,6 +73,10 @@
         right: 0;
         bottom: -30rem;
     }  
+
+    .scene-one {
+        max-width: 100%;
+    }
     
     .scene-one-wrapper {
         position: relative;
@@ -94,7 +98,6 @@
     }
 
     .mining-txt-wrapper {
-        width: 473px;
         position: absolute;
         top: 12rem;
         overflow: hidden;
@@ -117,5 +120,7 @@
     .connecting {
         background: var(--white);
         width: 1px;
-        height: 1rem;
+        position: absolute;
+        top: 44rem;
+        right: 29rem;
     }
