@@ -26,25 +26,14 @@ $(document).ready(function () {
     opacity: 0,
   });
 
-  gsap.to(".mining-img-wrapper", {
-    scrollTrigger: {
-      trigger: ".mining-img-wrapper",
-      start: "top 350px",
-      end: "+=500px 400px",
-      pin: true,
-      scrub: true,
-      // markers: true,
-    },
-  });
-
   gsap.to(".sec-two", {
     scrollTrigger: {
       trigger: ".sec-two",
-      start: "top 100px",
-      end: "bottom 100px",
+      start: "top 200px",
+      end: "+=2000px",
       pin: true,
       scrub: true,
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -66,38 +55,65 @@ $(document).ready(function () {
   LottieScrollTrigger({
     target: '.mining-img-wrapper',
     path: 'https://lottie.host/4716a4fa-952f-4e6b-b635-a801cb0cd60f/WILaX0swxJ.json',
-    speed: "slow",
-    start: "top 80%",
-    end: "bottom +=-200px",
-    once: true,
-    scrub: true,
+    speed: "medium",
+    scrub: 4,
     // markers: true,
   });
 
 
   function LottieScrollTrigger(vars) {
-    let playhead = { frame: 0 },
+    let playhead = { frame: vars.startFrameOffset || 0 },
       target = gsap.utils.toArray(vars.target)[0],
       speeds = { slow: "+=2000", medium: "+=1000", fast: "+=500" },
-      st = { trigger: target, pin: true, start: "top top", end: speeds[vars.speed] || "+=1000", scrub: 5 },
+      st = {
+        trigger: target,
+        pin: true,
+        start: "top top",
+        end: speeds[vars.speed] || "+=1000",
+        scrub: 1
+      },
+      ctx = gsap.context && gsap.context(),
       animation = lottie.loadAnimation({
         container: target,
         renderer: vars.renderer || "svg",
         loop: false,
         autoplay: false,
-        path: vars.path
-      });
+        path: vars.path,
+        rendererSettings: vars.rendererSettings || {
+          preserveAspectRatio: "xMidYMid slice"
+        }
+      }),
+      frameAnimation;
     for (let p in vars) {
+      // let users override the ScrollTrigger defaults
       st[p] = vars[p];
     }
+    frameAnimation = vars.timeline || gsap.timeline({ scrollTrigger: st });
+    if (vars.timeline && !vars.timeline.vars.scrollTrigger) {
+      // if the user passed in a timeline that didn't have a ScrollTrigger attached, create one.
+      st.animation = frameAnimation;
+      ScrollTrigger.create(st);
+    }
     animation.addEventListener("DOMLoaded", function () {
-      gsap.to(playhead, {
-        frame: animation.totalFrames - 1,
-        ease: "none",
-        onUpdate: () => animation.goToAndStop(playhead.frame, true),
-        scrollTrigger: st
-      });
+      let createTween = function () {
+        animation.goToAndStop(playhead.frame, true);
+        frameAnimation.to(playhead, {
+            frame: animation.totalFrames - 1 - (vars.endFrameOffset || 0),
+            ease: "none",
+            duration: frameAnimation.duration() || 1,
+            onUpdate: () => {
+              animation.goToAndStop(playhead.frame, true);
+            }
+          }, 0);
+        return () => animation.destroy && animation.destroy();
+      };
+      ctx && ctx.add ? ctx.add(createTween) : createTween();
+      // in case there are any other ScrollTriggers on the page and the loading of this Lottie asset caused layout changes
+      ScrollTrigger.sort();
+      ScrollTrigger.refresh();
     });
+    animation.frameAnimation = frameAnimation;
+    return animation;
   }
 
 });
