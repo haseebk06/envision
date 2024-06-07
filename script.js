@@ -1,73 +1,55 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-    gsap.registerPlugin(ScrollTrigger);
+$(document).ready(function () {
+  gsap.registerPlugin(ScrollTrigger);
 
-    const lenis = new Lenis();
+  const lenis = new Lenis({
+    duration: 4,
+    smoothWheel: true,
+    smoothTouch: false,
+    direction: "vertical",
+  });
 
-    lenis.on('scroll', (e) => {
-        console.log(e);
-    });
-
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
+  }
 
-    // Scene 1: Scroll up 'Envision' text and fade in graphic
-    gsap.to(".hero-txt", {
-        scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: true
-        },
-        y: -200,
-        opacity: 0
-    });
+  requestAnimationFrame(raf);
 
-    // Scene 2: Fade in the mine graphic and text
-    gsap.to(".mine-graphic, .mine-text", {
-        scrollTrigger: {
-            trigger: ".sec-two",
-            start: "top center",
-            end: "bottom top",
-            scrub: true
-        },
-        opacity: 1
-    });
+  gsap.to(".hero-txt", {
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+    y: -200,
+    opacity: 0,
+  });
 
-    // Scene 3: Colored dots overlay
-    gsap.to(".colored-dots", {
-        scrollTrigger: {
-            trigger: ".sec-two",
-            start: "top center",
-            end: "bottom top",
-            scrub: true
-        },
-        opacity: 1
-    });
+  gsap.to(".mining-img-wrapper", {
+    scrollTrigger: {
+      trigger: ".mining-img-wrapper",
+      start: "top 45%",
+      end: "bottom 250px",
+      pin: true,
+      scrub: true,
+    //   markers: true,
+    },
+  });
 
-    // Scene 4: Grow line vertically
-    gsap.to(".line", {
-        scrollTrigger: {
-            trigger: ".sec-three",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-        },
-        scaleY: 1
-    });
+  gsap.set(".line", {
+    yPercent: 100
+  })
 
-    // Darken background in sec-two while scrolling
-    ScrollTrigger.create({
-        trigger: ".sec-two",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        onUpdate: (self) => {
-            const progress = self.progress.toFixed(3);
-            document.querySelector(".sec-two").style.background = `rgba(0, 75, 102, ${progress})`;
-        }
-    });
+  gsap.to(".line", {
+    scrollTrigger: {
+        trigger: ".mining-txt-wrapper",
+        toggleActions: "restart pause reverse pause",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: .09,
+    ease: "Expo.easeInOut"
+  })
+
 });

@@ -1,9 +1,16 @@
+:root {
+    --light-bluey: #007ba6;
+    --dark-bluey: #004F68;
+    --white: #fff;
+    --black: #000;
+}
+
 body,
 html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #004F68;
+    background: var(--dark-bluey);
 }
 
 html.lenis,
@@ -11,10 +18,6 @@ html.lenis body {
     height: auto;
 }
 
-@font-face {
-    font-family: envision sans;
-    src: url('./fonts/Helvetica.ttf');
-}
 
 .lenis.lenis-smooth {
     scroll-behavior: auto !important;
@@ -32,27 +35,43 @@ html.lenis body {
     pointer-events: none;
 }
 
+::-webkit-scrollbar-thumb {
+    background: var(--light-bluey);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    width: 8px;
+}
+
+@font-face {
+    font-family: envision sans;
+    src: url('./fonts/helvetica/Helvetica.ttf');
+}
+
+@font-face {
+    font-family: envision regular;
+    src: url('./fonts/Inter/Inter-Regular.ttf');
+}
+
 .hero-txt-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
 }
 
 .hero {
-    background: #007ba6;
+    background: var(--light-bluey);
     position: relative;
     padding: 1.5rem;
 }
 
-.hero-img-wrapper {
+.mining-img-wrapper {
     position: absolute;
     right: 5rem;
     bottom: -12rem;
-}
-
-section {
-    height: 100vh;
 }
 
 .hero h1 {
@@ -61,4 +80,32 @@ section {
     color: #fff;
     font-weight: 400;
     line-height: 218px;
+}
+
+.sec-two {
+    height: 100vh;
+    position: relative;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.mining-txt-wrapper {
+    width: 473px;
+    position: absolute;
+    top: 20rem;
+    overflow: hidden;
+}
+
+.line-wrapper {
+    overflow: hidden;
+}
+
+.line{
+    font-size: 36px;
+    font-family: envision regular, sans-serif;
+    color: var(--white);
+}
+
+.sec-three {
+    height: 100vh;
 }

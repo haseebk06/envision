@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Envision</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="hero">
-        <div class="hero-txt-wrapper">
-            <h1 class="hero-txt">Envision...</h1>
-        </div>
+      <div class="hero-txt-wrapper">
+        <h1 class="hero-txt">Envision...</h1>
+      </div>
 
-        <div class="hero-img-wrapper">
-            <img class="horo-img" src="./img/minging.svg" alt="image">
+      <div class="mining-wrapper">
+        <div class="mining-img-wrapper">
+          <img class="horo-img" src="./img/minging.svg" alt="image" />
         </div>
+      </div>
     </section>
 
     <section class="sec-two">
-
+      <div class="mining-txt-wrapper">
+        <p class="sec-two-txt">
+          <div class="line-wrapper">
+            <div class="line">a mining operation that can</div>
+          </div>
+          <div class="line-wrapper">
+            <div class="line">predict & optimise</div>
+          </div>
+          <div class="line-wrapper">
+            <div class="line">operations based on</div>
+          </div>
+          <div class="line-wrapper">
+            <div class="line">geology</div>
+          </div>
+        </p>
+      </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script>
-        const lenis = new Lenis()
+    <section class="sec-three"></section>
 
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-
-        requestAnimationFrame(raf)
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            gsap.registerPlugin(ScrollTrigger)
-            // gsap code here!
-        });
-    </script>
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>
