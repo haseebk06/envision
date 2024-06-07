@@ -15,6 +15,16 @@ $(document).ready(function () {
 
   requestAnimationFrame(raf);
 
+  
+
+  gsap.set(".line", {
+    yPercent: 100
+  })
+
+  gsap.set(".connecting", {
+    height: 0
+  })
+
   gsap.to(".hero-txt", {
     scrollTrigger: {
       trigger: ".hero",
@@ -25,21 +35,6 @@ $(document).ready(function () {
     y: -500,
     opacity: 0,
   });
-
-  gsap.to(".sec-two", {
-    scrollTrigger: {
-      trigger: ".sec-two",
-      start: "top 200px",
-      end: "+=2000px",
-      pin: true,
-      scrub: true,
-      // markers: true,
-    },
-  });
-
-  gsap.set(".line", {
-    yPercent: 100
-  })
 
   gsap.to(".line", {
     scrollTrigger: {
@@ -52,10 +47,32 @@ $(document).ready(function () {
     ease: "Expo.easeInOut"
   })
 
+  gsap.to(".sec-two", {
+    scrollTrigger: {
+      trigger: ".sec-two",
+      start: "top 200px",
+      end: "+=3000px",
+      pin: true,
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  gsap.to(".connecting", {
+    scrollTrigger: {
+      trigger: ".connecting",
+      start: "top -100%",
+      end: "+=3000px",
+      scrub: 4,
+      markers: true
+    },
+    height: "60rem",
+  })
+
   LottieScrollTrigger({
     target: '.mining-img-wrapper',
     path: 'https://lottie.host/4716a4fa-952f-4e6b-b635-a801cb0cd60f/WILaX0swxJ.json',
-    speed: "medium",
+    speed: "slow",
     scrub: 4,
     // markers: true,
   });
