@@ -1,126 +1,130 @@
-    :root {
-        --light-bluey: #007ba6;
-        --dark-bluey: #004F68;
-        --white: #fff;
-        --black: #000;
-    }
+:root {
+  --light-bluey: #007ba6;
+  --dark-bluey: #004f68;
+  --white: #fff;
+  --black: #000;
+}
 
-    body,
-    html {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        background: var(--dark-bluey);
-    }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--light-bluey);
+  transition: all 1s;
+}
 
-    html.lenis,
-    html.lenis body {
-        height: auto;
-    }
+html.lenis,
+html.lenis body {
+  height: auto;
+}
 
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
 
-    .lenis.lenis-smooth {
-        scroll-behavior: auto !important;
-    }
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
 
-    .lenis.lenis-smooth [data-lenis-prevent] {
-        overscroll-behavior: contain;
-    }
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
 
-    .lenis.lenis-stopped {
-        overflow: hidden;
-    }
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
 
-    .lenis.lenis-smooth iframe {
-        pointer-events: none;
-    }
+::-webkit-scrollbar-thumb {
+  background: var(--light-bluey);
+  border-radius: 50px;
+}
 
-    ::-webkit-scrollbar-thumb {
-        background: var(--light-bluey);
-        border-radius: 50px;
-    }
+::-webkit-scrollbar {
+  background: var(--dark-bluey);
+  width: 8px;
+}
 
-    ::-webkit-scrollbar {
-        background: transparent;
-        width: 8px;
-    }
+@font-face {
+  font-family: envision sans;
+  src: url("./fonts/helvetica/Helvetica.ttf");
+}
 
-    @font-face {
-        font-family: envision sans;
-        src: url('./fonts/helvetica/Helvetica.ttf');
-    }
+@font-face {
+  font-family: envision regular;
+  src: url("./fonts/Inter/Inter-Regular.ttf");
+}
 
-    @font-face {
-        font-family: envision regular;
-        src: url('./fonts/Inter/Inter-Regular.ttf');
-    }
+.hero-txt-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
 
-    .hero-txt-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 80vh;
-    }
+.hero-txt-wrapper {
+  padding: 1.5rem;
+}
 
-    .hero {
-        background: var(--light-bluey);
-        position: relative;
-        padding: 1.5rem;
-    }
+.hero-txt-wrapper .hero-txt {
+  font-family: envsion sans, sans-serif;
+  font-size: clamp(2.25rem, -6.7734rem + 30.0781vw, 11.875rem);
+  color: #fff;
+  font-weight: 400;
+  line-height: 218px;
+}
 
-    .mining-img-wrapper {
-        position: absolute;
-        right: 0;
-        bottom: -30rem;
-    }  
+.container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  top: -20rem;
+}
 
-    .scene-one {
-        max-width: 100%;
-    }
-    
-    .scene-one-wrapper {
-        position: relative;
-    }
+.scnz-wrapper {
+  width: 50%;
+}
 
-    .hero h1 {
-        font-family: envsion sans, sans-serif;
-        font-size: clamp(2.25rem, -6.7734rem + 30.0781vw, 11.875rem);
-        color: #fff;
-        font-weight: 400;
-        line-height: 218px;
-    }
+.txt-wrapper {
+  width: 50%;
+}
 
-    .sec-two {
-        height: 100vh;
-        position: relative;
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
+.blank-txt {
+  height: 20vh;
+  width: 100%;
+}
 
-    .mining-txt-wrapper {
-        position: absolute;
-        top: 12rem;
-        overflow: hidden;
-    }
+.txt-one {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
 
-    .line-wrapper {
-        overflow: hidden;
-    }
+.scene-one {
+  width: 100%;
+  height: 100vh;
+}
 
-    .line{
-        font-size: 36px;
-        font-family: envision regular, sans-serif;
-        color: var(--white);
-    }
+.scene-two {
+  width: 100%;
+  height: 100vh;
+}
 
-    .sec-three {
-        height: 100vh;
-    }
+.line-wrapper {
+  overflow: hidden;
+}
 
-    .connecting {
-        background: var(--white);
-        width: 1px;
-        position: absolute;
-        top: 44rem;
-        right: 29rem;
-    }
+.line{
+  font-size: 36px;
+  font-family: envision regular, sans-serif;
+  color: var(--white);
+}
+
+.spacer {
+  width: 100%;
+  height: 50vh;
+}

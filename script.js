@@ -15,15 +15,9 @@ $(document).ready(function () {
 
   requestAnimationFrame(raf);
 
-  
-
   gsap.set(".line", {
-    yPercent: 100
-  })
-
-  gsap.set(".connecting", {
-    height: 0
-  })
+    yPercent: 100,
+  });
 
   gsap.to(".hero-txt", {
     scrollTrigger: {
@@ -38,45 +32,43 @@ $(document).ready(function () {
 
   gsap.to(".line", {
     scrollTrigger: {
-      trigger: ".mining-txt-wrapper",
+      trigger: ".txt-one",
+      start: "top top",
+      end: "+=1500",
+      pin: true,
       toggleActions: "restart pause reverse pause",
+      markers: true
     },
     yPercent: 0,
     duration: 1.7,
-    stagger: .09,
-    ease: "Expo.easeInOut"
-  })
-
-  gsap.to(".sec-two", {
-    scrollTrigger: {
-      trigger: ".sec-two",
-      start: "top 200px",
-      end: "+=3000px",
-      pin: true,
-      scrub: true,
-      // markers: true,
-    },
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
   });
-
-  gsap.to(".connecting", {
-    scrollTrigger: {
-      trigger: ".connecting",
-      start: "top -100%",
-      end: "+=3000px",
-      scrub: 4,
-      markers: true
-    },
-    height: "60rem",
-  })
-
+  
   LottieScrollTrigger({
-    target: '.mining-img-wrapper',
+    target: '.scene-one',
     path: 'https://lottie.host/4716a4fa-952f-4e6b-b635-a801cb0cd60f/WILaX0swxJ.json',
-    speed: "slow",
+    speed: "fast",
     scrub: 4,
     // markers: true,
   });
 
+  gsap.to("body", {
+    scrollTrigger: {
+      trigger: ".scene-two",
+      start: "top top",
+      scrub: true,
+    },
+    background: "var(--dark-bluey)",
+  });
+  
+  LottieScrollTrigger({
+    target: '.scene-two',
+    path: 'https://lottie.host/b60a2260-32b4-4b53-8bd0-b5040d12324b/eAH7C0xk3i.json',
+    speed: "medium",
+    scrub: 1,
+    markers: true,
+  });
 
   function LottieScrollTrigger(vars) {
     let playhead = { frame: vars.startFrameOffset || 0 },
