@@ -26,7 +26,7 @@ $(document).ready(function () {
       end: "bottom top",
       scrub: true,
     },
-    y: -500,
+    y: -800,
     opacity: 0,
   });
 
@@ -34,10 +34,10 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: ".txt-one",
       start: "top top",
-      end: "+=1500",
+      end: "+=2600",
       pin: true,
       toggleActions: "restart pause reverse pause",
-      markers: true
+      // markers: true
     },
     yPercent: 0,
     duration: 1.7,
@@ -48,7 +48,7 @@ $(document).ready(function () {
   LottieScrollTrigger({
     target: '.scene-one',
     path: 'https://lottie.host/4716a4fa-952f-4e6b-b635-a801cb0cd60f/WILaX0swxJ.json',
-    speed: "fast",
+    speed: "mediun",
     scrub: 4,
     // markers: true,
   });
@@ -66,8 +66,8 @@ $(document).ready(function () {
     target: '.scene-two',
     path: 'https://lottie.host/b60a2260-32b4-4b53-8bd0-b5040d12324b/eAH7C0xk3i.json',
     speed: "medium",
-    scrub: 1,
-    markers: true,
+    scrub: 4,
+    // markers: true,
   });
 
   function LottieScrollTrigger(vars) {
