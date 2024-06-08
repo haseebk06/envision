@@ -30,7 +30,7 @@ $(document).ready(function () {
     opacity: 0,
   });
 
-  gsap.to(".line", {
+  gsap.to(".txt-one .line", {
     scrollTrigger: {
       trigger: ".txt-one",
       start: "top top",
@@ -38,6 +38,35 @@ $(document).ready(function () {
       pin: true,
       toggleActions: "restart pause reverse pause",
       // markers: true
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".txt-two .line", {
+    scrollTrigger: {
+      trigger: ".txt-two",
+      start: "top 100px",
+      end: "+=2000",
+      pin: true,
+      toggleActions: "restart pause reverse pause",
+      // markers: true
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".txt-three .line", {
+    scrollTrigger: {
+      trigger: ".txt-three",
+      start: "top 200px",
+      end: "+=1200",
+      pin: true,
+      toggleActions: "restart pause reverse pause",
     },
     yPercent: 0,
     duration: 1.7,
@@ -65,6 +94,23 @@ $(document).ready(function () {
   LottieScrollTrigger({
     target: '.scene-two',
     path: 'https://lottie.host/b60a2260-32b4-4b53-8bd0-b5040d12324b/eAH7C0xk3i.json',
+    speed: "slow",
+    scrub: 4,
+    // markers: true,
+  });
+  
+  LottieScrollTrigger({
+    target: '.scene-three',
+    path: 'https://lottie.host/976b0169-82ab-4118-9624-04075c170021/wS8cde9Gc5.json',
+    start: "top center",
+    speed: "slow",
+    scrub: 4,
+    // markers: true,
+  });
+  
+  LottieScrollTrigger({
+    target: '.scene-four',
+    path: 'https://lottie.host/21116ad4-df06-4b4c-ab21-fb567881962d/oSMtqw2UVp.json',
     speed: "medium",
     scrub: 4,
     // markers: true,
@@ -73,7 +119,7 @@ $(document).ready(function () {
   function LottieScrollTrigger(vars) {
     let playhead = { frame: vars.startFrameOffset || 0 },
       target = gsap.utils.toArray(vars.target)[0],
-      speeds = { slow: "+=2000", medium: "+=1000", fast: "+=500" },
+      speeds = { slow: "+=1500", medium: "+=1000", fast: "+=500" },
       st = {
         trigger: target,
         pin: true,
