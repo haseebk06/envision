@@ -36,7 +36,7 @@ $(document).ready(function () {
       start: "top top",
       end: "+=2600",
       pin: true,
-      toggleActions: "restart pause reverse pause",
+      toggleActions: "restart none reverse none",
       // markers: true
     },
     yPercent: 0,
@@ -51,7 +51,7 @@ $(document).ready(function () {
       start: "top 100px",
       end: "+=2000",
       pin: true,
-      toggleActions: "restart pause reverse pause",
+      toggleActions: "restart none reverse none",
       // markers: true
     },
     yPercent: 0,
@@ -66,7 +66,63 @@ $(document).ready(function () {
       start: "top 200px",
       end: "+=1200",
       pin: true,
-      toggleActions: "restart pause reverse pause",
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".scene-four-txt .line", {
+    scrollTrigger: {
+      trigger: ".scene-four-txt",
+      start: "top 200px",
+      end: "+=400",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".scene-four-txt-two .line", {
+    scrollTrigger: {
+      trigger: ".scene-four-txt-two",
+      start: "top 200px",
+      end: "+=400",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".scene-four-txt-three .line", {
+    scrollTrigger: {
+      trigger: ".scene-four-txt-three",
+      start: "top 200px",
+      end: "+=400",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".scene-four-txt-four .line", {
+    scrollTrigger: {
+      trigger: ".scene-four-txt-four",
+      start: "top 200px",
+      end: "+=400",
+      pin: true,
+      toggleActions: "restart none reverse none",
     },
     yPercent: 0,
     duration: 1.7,
@@ -89,6 +145,19 @@ $(document).ready(function () {
       scrub: true,
     },
     background: "var(--dark-bluey)",
+  });
+
+  // gsap.set("body", {
+  //   background: "var(--dark-bluey)"
+  // });
+
+  gsap.to("body", {
+    scrollTrigger: {
+      trigger: ".scene-four",
+      start: "bottom 100px",
+      scrub: true,
+    },
+    background: "var(--off-white)",
   });
   
   LottieScrollTrigger({
