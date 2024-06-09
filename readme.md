@@ -2,7 +2,7 @@
 
 [ref] (https://petra.staging-server.me/home/)
 
-[figma] (https://www.figma.com/design/VORyQniMFYAOrPVYowag2K/Landing-Page-Story-Telling?node-id=0-1)
+[figma] (https://www.figma.com/design/1KMSC1OdoqAULjQqqKDEu4/Landing-Page-Story-Telling-(Copy)?node-id=0-1&t=DMRmanhw3vyieeO9-0)
 
 ## scene 1 
 
