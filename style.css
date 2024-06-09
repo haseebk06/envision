@@ -37,12 +37,12 @@ html.lenis body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--light-bluey);
+  background: var(--dark-bluey);
   border-radius: 50px;
 }
 
 ::-webkit-scrollbar {
-  background: var(--dark-bluey);
+  background: transparent;
   width: 8px;
 }
 
@@ -100,6 +100,15 @@ html.lenis body {
 
 .scnz-wrapper {
   width: 50%;
+  position: relative;
+}
+
+.connection {
+  position: absolute;
+  width: 1px;
+  background: var(--white);
+  right: 22.3rem;
+  top: 38rem;
 }
 
 .txt-wrapper {
@@ -138,6 +147,15 @@ html.lenis body {
   width: 100%;
 }
 
+.txt-four {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+}
+
 .conceptual-wrapper {
   display: flex;
   flex-direction: column;
@@ -146,24 +164,6 @@ html.lenis body {
 }
 
 .scene-four-txt {
-  margin-left: 12vw;
-  height: 100vh;
-  width: 100%;
-}
-
-.scene-four-txt-two {
-  margin-left: 12vw;
-  height: 100vh;
-  width: 100%;
-}
-
-.scene-four-txt-three {
-  margin-left: 12vw;
-  height: 100vh;
-  width: 100%;
-}
-
-.scene-four-txt-four {
   margin-left: 12vw;
   height: 100vh;
   width: 100%;
@@ -188,7 +188,7 @@ html.lenis body {
   overflow: hidden;
 }
 
-.line{
+.line {
   font-size: 36px;
   font-family: envision regular, sans-serif;
   color: var(--white);
