@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   gsap.set(".connection", {
-    height: "0"
-  })
- 
+    height: 5,
+  });
+
   gsap.to("body", {
     scrollTrigger: {
       trigger: ".scene-two",
@@ -39,6 +39,15 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: true,
     },
     background: "var(--off-white)",
+  });
+
+  gsap.to("body", {
+    scrollTrigger: {
+      trigger: ".base-img-wapper",
+      start: "top 90%",
+      scrub: true,
+    },
+    background: "var(--dark-bluey)",
   });
 
   gsap.to(".hero-txt", {
@@ -166,9 +175,40 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "Expo.easeInOut",
   });
 
+  ScrollTrigger.create({
+    trigger: ".base-img-wapper",
+    start: "top -50px",
+    end: "+=1500",
+    pin: true,
+  });
+
+  gsap.to(".base-img-wrapper", {
+    scrollTrigger: {
+      trigger: ".base-img-wrapper",
+      start: "top center",
+      end: "+=200px",
+      markers: true
+    },
+    opacity: 0.5
+  })
+  
+  gsap.to(".txt-five .line", {
+    scrollTrigger: {
+      trigger: ".txt-five",
+      start: "top 100px",
+      end: "+=450",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
   LottieScrollTrigger({
-    target: '.scene-one',
-    path: 'https://lottie.host/4716a4fa-952f-4e6b-b635-a801cb0cd60f/WILaX0swxJ.json',
+    target: ".scene-one",
+    path: "https://lottie.host/4716a4fa-952f-4e6b-b635-a801cb0cd60f/WILaX0swxJ.json",
     speed: "mediun",
     scrub: 4,
     // markers: true,
@@ -177,25 +217,35 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.to(".connection", {
     scrollTrigger: {
       trigger: ".connection",
+      start: "top 80%",
+      end: "+=200",
       pin: true,
-      scrub: true,
-      markers: true
+      scrub: 3,
+      // markers: true
     },
-    height: 2000,
-    ease: "Expo.easeIn"
-  })
+    height: 310,
+    ease: "Expo.easeIn",
+  });
+
+  // ScrollTrigger.create({
+  //   trigger: ".connection",
+  //   start: "top 100px",
+  //   end: "+=1500",
+  //   pin: true,
+  //   // markers: true
+  // })
 
   LottieScrollTrigger({
-    target: '.scene-two',
-    path: 'https://lottie.host/b60a2260-32b4-4b53-8bd0-b5040d12324b/eAH7C0xk3i.json',
+    target: ".scene-two",
+    path: "https://lottie.host/b60a2260-32b4-4b53-8bd0-b5040d12324b/eAH7C0xk3i.json",
     speed: "slow",
     scrub: 4,
     // markers: true,
   });
 
   LottieScrollTrigger({
-    target: '.scene-three',
-    path: 'https://lottie.host/976b0169-82ab-4118-9624-04075c170021/wS8cde9Gc5.json',
+    target: ".scene-three",
+    path: "https://lottie.host/976b0169-82ab-4118-9624-04075c170021/wS8cde9Gc5.json",
     start: "top center",
     speed: "slow",
     scrub: 4,
@@ -203,8 +253,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   LottieScrollTrigger({
-    target: '.scene-four',
-    path: 'https://lottie.host/21116ad4-df06-4b4c-ab21-fb567881962d/oSMtqw2UVp.json',
+    target: ".scene-four",
+    path: "https://lottie.host/21116ad4-df06-4b4c-ab21-fb567881962d/oSMtqw2UVp.json",
     speed: "slow",
     scrub: 4,
     // markers: true,
@@ -219,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pin: true,
         start: "top top",
         end: speeds[vars.speed] || "+=1000",
-        scrub: 1
+        scrub: 1,
       },
       ctx = gsap.context && gsap.context(),
       animation = lottie.loadAnimation({
@@ -229,8 +279,8 @@ document.addEventListener("DOMContentLoaded", function () {
         autoplay: false,
         path: vars.path,
         rendererSettings: vars.rendererSettings || {
-          preserveAspectRatio: "xMidYMid slice"
-        }
+          preserveAspectRatio: "xMidYMid slice",
+        },
       }),
       frameAnimation;
     for (let p in vars) {
@@ -246,14 +296,18 @@ document.addEventListener("DOMContentLoaded", function () {
     animation.addEventListener("DOMLoaded", function () {
       let createTween = function () {
         animation.goToAndStop(playhead.frame, true);
-        frameAnimation.to(playhead, {
-          frame: animation.totalFrames - 1 - (vars.endFrameOffset || 0),
-          ease: "none",
-          duration: frameAnimation.duration() || 1,
-          onUpdate: () => {
-            animation.goToAndStop(playhead.frame, true);
-          }
-        }, 0);
+        frameAnimation.to(
+          playhead,
+          {
+            frame: animation.totalFrames - 1 - (vars.endFrameOffset || 0),
+            ease: "none",
+            duration: frameAnimation.duration() || 1,
+            onUpdate: () => {
+              animation.goToAndStop(playhead.frame, true);
+            },
+          },
+          0
+        );
         return () => animation.destroy && animation.destroy();
       };
       ctx && ctx.add ? ctx.add(createTween) : createTween();
@@ -264,5 +318,4 @@ document.addEventListener("DOMContentLoaded", function () {
     animation.frameAnimation = frameAnimation;
     return animation;
   }
-
 });

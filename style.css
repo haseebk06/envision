@@ -98,17 +98,23 @@ html.lenis body {
   top: -30rem;
 }
 
+.five {
+  justify-content: center;
+  flex-direction: column;
+}
+
 .scnz-wrapper {
   width: 50%;
   position: relative;
 }
 
 .connection {
+  display:none;
   position: absolute;
   width: 1px;
   background: var(--white);
-  right: 22.3rem;
-  top: 38rem;
+  right: 25rem;
+  top: 53rem;
 }
 
 .txt-wrapper {
@@ -156,6 +162,25 @@ html.lenis body {
   width: 100%;
 }
 
+.txt-five {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  top: -5rem;
+}
+
+.sec-one-wrapper {
+  margin-bottom: 3rem;
+}
+
+.sec-two-wrapper {
+  margin-bottom: 9rem;
+}
+
 .conceptual-wrapper {
   display: flex;
   flex-direction: column;
@@ -164,7 +189,7 @@ html.lenis body {
 }
 
 .scene-four-txt {
-  margin-left: 12vw;
+  margin-left: 10vw;
   height: 100vh;
   width: 100%;
 }
@@ -184,6 +209,18 @@ html.lenis body {
   height: 50vh;
 }
 
+.base-img-wapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.base-img-wapper img{
+  max-width: 50%;
+}
+
 .line-wrapper {
   overflow: hidden;
 }
@@ -197,4 +234,12 @@ html.lenis body {
 .txt-black {
   color: var(--black);
   font-size: clamp(1rem, -1.8125rem + 9.375vw, 4rem);
+}
+
+.upper {
+  font-size: clamp(2.25rem, 0.6094rem + 5.4688vw, 4rem);
+}
+
+.spacer {
+  height: 50vh;
 }
