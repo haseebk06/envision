@@ -50,6 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
     background: "var(--dark-bluey)",
   });
 
+  gsap.to("body", {
+    scrollTrigger: {
+      trigger: ".txt-six",
+      start: "top -50px",
+      scrub: true,
+    },
+    background: "var(--off-white)",
+  });
+
   gsap.to(".hero-txt", {
     scrollTrigger: {
       trigger: ".hero",
@@ -122,8 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.to(".con-one .line", {
     scrollTrigger: {
       trigger: ".con-one",
-      start: "top 200px",
-      end: "+=450",
+      start: "top 300px",
+      end: "+=500",
       pin: true,
       toggleActions: "restart none reverse none",
     },
@@ -136,8 +145,8 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.to(".con-two .line", {
     scrollTrigger: {
       trigger: ".con-two",
-      start: "top 200px",
-      end: "+=450",
+      start: "top 300px",
+      end: "+=500",
       pin: true,
       toggleActions: "restart none reverse none",
     },
@@ -150,8 +159,78 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.to(".con-three .line", {
     scrollTrigger: {
       trigger: ".con-three",
+      start: "top 300px",
+      end: "+=500",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".last-one .line", {
+    scrollTrigger: {
+      trigger: ".last-one",
+      start: "top center",
+      end: "+=500",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".last-two .line", {
+    scrollTrigger: {
+      trigger: ".last-two",
       start: "top 200px",
-      end: "+=450",
+      end: "+=500",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".last-three .line", {
+    scrollTrigger: {
+      trigger: ".last-three",
+      start: "top 200px",
+      end: "+=500",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".last-four .line", {
+    scrollTrigger: {
+      trigger: ".last-four",
+      start: "top 200px",
+      end: "+=500",
+      pin: true,
+      toggleActions: "restart none reverse none",
+    },
+    yPercent: 0,
+    duration: 1.7,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+
+  gsap.to(".last-five .line", {
+    scrollTrigger: {
+      trigger: ".last-five",
+      start: "top 200px",
+      end: "+=500",
       pin: true,
       toggleActions: "restart none reverse none",
     },
@@ -206,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".txt-six",
       start: "top 80%",
-      end: "+=600",
+      end: "+=380",
       pin: true,
       toggleActions: "restart none reverse none"
     },

@@ -256,10 +256,14 @@ html.lenis body {
   font-size: clamp(1rem, -1.8125rem + 9.375vw, 4rem);
 }
 
+.txt-small {
+  font-size: 32px;
+}
+
 .upper {
   font-size: clamp(2.25rem, 0.6094rem + 5.4688vw, 4rem);
 }
 
 .spacer {
-  height: 50vh;
+  height: 40vh;
 }
