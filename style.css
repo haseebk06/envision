@@ -77,13 +77,13 @@ html.lenis body {
 
 .container {
   display: flex;
-  padding: 0 5rem;
   margin: auto;
   position: relative;
 }
 
 .one {
   top: -20rem;
+  padding: 0 5rem;
 }
 
 .two {
@@ -92,15 +92,22 @@ html.lenis body {
 
 .three {
   top: -30rem;
+  padding: 0 5rem;
 }
 
 .four {
   top: -30rem;
+  padding: 0 5rem;
 }
 
 .five {
   justify-content: center;
   flex-direction: column;
+  padding: 0 5rem;
+}
+
+.six {
+  padding: 0 5rem;
 }
 
 .scnz-wrapper {
@@ -109,7 +116,7 @@ html.lenis body {
 }
 
 .connection {
-  display:none;
+  display: none;
   position: absolute;
   width: 1px;
   background: var(--white);
@@ -237,7 +244,7 @@ html.lenis body {
   justify-content: center;
 }
 
-.base-img-wrapper img{
+.base-img-wrapper img {
   max-width: 50%;
 }
 
@@ -266,4 +273,20 @@ html.lenis body {
 
 .spacer {
   height: 40vh;
+}
+
+@media (max-width: 500px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .scnz-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  .txt-wrapper {
+    width: 100%;
+  }
 }
