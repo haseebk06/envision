@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   gsap.to("body", {
     scrollTrigger: {
-      trigger: ".base-img-wapper",
+      trigger: ".base-img-wrapper",
       start: "top 90%",
       scrub: true,
     },
@@ -175,33 +175,43 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "Expo.easeInOut",
   });
 
-  ScrollTrigger.create({
-    trigger: ".base-img-wapper",
-    start: "top -50px",
-    end: "+=1500",
-    pin: true,
-  });
 
   gsap.to(".base-img-wrapper", {
     scrollTrigger: {
       trigger: ".base-img-wrapper",
-      start: "top center",
-      end: "+=200px",
-      markers: true
+      start: "top -50px",
+      end: "+=1400px",
+      pin: true,
+      scrub: true,
     },
-    opacity: 0.5
+    delay: 1.5,
+    opacity: 0.3
   })
   
   gsap.to(".txt-five .line", {
     scrollTrigger: {
       trigger: ".txt-five",
       start: "top 100px",
-      end: "+=450",
+      end: "+=600",
       pin: true,
-      toggleActions: "restart none reverse none",
+      toggleActions: "restart none reverse none"
     },
     yPercent: 0,
-    duration: 1.7,
+    duration: 1,
+    stagger: 0.09,
+    ease: "Expo.easeInOut",
+  });
+  
+  gsap.to(".txt-six .line", {
+    scrollTrigger: {
+      trigger: ".txt-six",
+      start: "top 80%",
+      end: "+=600",
+      pin: true,
+      toggleActions: "restart none reverse none"
+    },
+    yPercent: 0,
+    duration: 1,
     stagger: 0.09,
     ease: "Expo.easeInOut",
   });
@@ -258,6 +268,13 @@ document.addEventListener("DOMContentLoaded", function () {
     speed: "slow",
     scrub: 4,
     // markers: true,
+  });
+
+  LottieScrollTrigger({
+    target: ".scene-five",
+    path: "https://lottie.host/b5a27330-06d3-460d-ac7f-278b3e982263/PviNuyyT0k.json",
+    speed: "slow",
+    scrub: 4,
   });
 
   function LottieScrollTrigger(vars) {
