@@ -13,6 +13,7 @@ html {
   box-sizing: border-box;
   background: var(--light-bluey);
   transition: background-color 0.3s;
+	overflow-x:hidden;
 }
 
 html.lenis,
@@ -107,7 +108,24 @@ html.lenis body {
 }
 
 .six {
+  display: block;
+}
+
+.seven {
   padding: 0 5rem;
+  margin-left: 10vw;
+}
+
+.sc-sv-img-wrapper {
+	display:flex;
+	flex-wrap:nowrap;
+  height: 100vh;
+  width: fit-content;
+}
+
+.sc-sev-img img{
+  width: fit-content;
+  height: 100vh;
 }
 
 .scnz-wrapper {
@@ -198,16 +216,14 @@ html.lenis body {
 }
 
 .conceptual-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  margin-left: 10vw;
 }
 
 .scene-four-txt {
-  margin-left: 10vw;
   height: 100vh;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .scene-one {
@@ -226,10 +242,8 @@ html.lenis body {
 }
 
 .scene-five {
-  /* margin-top: 25rem !important; */
   margin: auto;
   width: 80%;
-  height: 100vh;
 }
 
 .space {
@@ -268,7 +282,7 @@ html.lenis body {
 }
 
 .upper {
-  font-size: clamp(2.25rem, 0.6094rem + 5.4688vw, 4rem);
+  font-size: clamp(2rem, 0.7109rem + 4.2969vw, 3.375rem);
 }
 
 .spacer {
