@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleActions: "restart none reverse none",
       // markers: true
     },
-    height: 480,
+    height: "80vh",
     duration: 1.5,
   });
 
@@ -339,14 +339,14 @@ document.addEventListener("DOMContentLoaded", function () {
       end: "+500",
       toggleActions: "restart none reverse none",
     },
-    height: 1500,
+    height: "165vh",
     duration: 2
   });
 
   ScrollTrigger.create({
     trigger: ".scene-three",
     start: "top center",
-    end: "+=600",
+    end: "+=650",
     pin: ".connection-two",
   })
 
