@@ -298,6 +298,17 @@ document.addEventListener("DOMContentLoaded", function () {
       stagger: 0.09,
       ease: "Expo.easeInOut",
     });
+
+    gsap.to(".btn-wrapper", {
+      scrollTrigger: {
+        trigger: ".btn-wrapper",
+        start: "top 80%",
+        end: "+=100",
+        toggleActions: "restart none reverse none",
+      },
+      opacity: 1,
+      delay: 1,
+    });
   });
 
   
