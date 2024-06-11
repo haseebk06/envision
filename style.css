@@ -63,6 +63,8 @@ html.lenis body {
   justify-content: center;
   height: 80vh;
   background-color: var(--light-bluey);
+  position: relative;
+  z-index: 3;
 }
 
 .hero-txt-wrapper {
