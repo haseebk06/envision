@@ -4,16 +4,16 @@
   --white: #fff;
   --black: #000;
   --off-white: #f1f1f1;
+  --envision-gray: #C0C0C0;
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
+  background-color: var(--dark-bluey);
   box-sizing: border-box;
-  background: var(--light-bluey);
-  transition: background-color 0.3s;
-	overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 html.lenis,
@@ -43,7 +43,7 @@ html.lenis body {
 }
 
 ::-webkit-scrollbar {
-  background: transparent;
+  background: var(--light-bluey);
   width: 8px;
 }
 
@@ -62,6 +62,7 @@ html.lenis body {
   align-items: center;
   justify-content: center;
   height: 80vh;
+  background-color: var(--light-bluey);
 }
 
 .hero-txt-wrapper {
@@ -80,25 +81,32 @@ html.lenis body {
   display: flex;
   margin: auto;
   position: relative;
+  transition: background-color 0.5s;
 }
 
 .one {
   top: -20rem;
   padding: 0 5rem;
+  background-color: var(--light-bluey);
 }
 
 .two {
-  top: -150rem;
+  /* top: -150rem; */
+  position: relative;
+  flex-direction: column;
+  background-color: var(--dark-bluey);
 }
 
 .three {
-  top: -30rem;
+  /* top: -30rem; */
   padding: 0 5rem;
+  background-color: var(--dark-bluey);
 }
 
 .four {
-  top: -30rem;
+  /* top: -30rem; */
   padding: 0 5rem;
+  background-color: var(--off-white);
 }
 
 .five {
@@ -109,21 +117,27 @@ html.lenis body {
 
 .six {
   display: block;
-}
-
-.seven {
-  padding: 0 5rem;
-  margin-left: 10vw;
+  background-color: var(--dark-bluey);
+  }
+  
+  .seven {
+    padding: 0 5rem;
+    padding-left: 10vw;
+    background-color: var(--off-white);
 }
 
 .sc-sv-img-wrapper {
-	display:flex;
-	flex-wrap:nowrap;
+  display: flex;
+  flex-wrap: nowrap;
   height: 100vh;
   width: fit-content;
 }
 
-.sc-sev-img img{
+.sc-sev-img {
+  position: relative;
+}
+
+.sc-sev-img img {
   width: fit-content;
   height: 100vh;
 }
@@ -134,12 +148,31 @@ html.lenis body {
 }
 
 .connection {
-  display: none;
+  display: flex;
+  justify-content: center;
   position: absolute;
+  top: 60rem;
+  right: 27rem;
+  z-index: 1;
+}
+
+.connection-two {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -30rem;
+  right: 32rem;
+  z-index: 1;
+}
+
+.connect {
   width: 1px;
   background: var(--white);
-  right: 25rem;
-  top: 53rem;
+}
+
+.connect-two {
+  width: 1px;
+  background: var(--white);
 }
 
 .txt-wrapper {
@@ -161,6 +194,7 @@ html.lenis body {
 }
 
 .txt-two {
+  padding: 0 5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -229,6 +263,8 @@ html.lenis body {
 .scene-one {
   width: 100%;
   height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
 .scene-two {
@@ -243,7 +279,7 @@ html.lenis body {
 
 .scene-five {
   margin: auto;
-  width: 80%;
+  width: 70%;
 }
 
 .space {
@@ -271,6 +307,69 @@ html.lenis body {
   font-family: envision regular, sans-serif;
   color: var(--white);
 }
+
+.img-txt p {
+  font-size: clamp(2rem, 0.7109rem + 4.2969vw, 3.375rem);
+  font-family: envision regular, sans-serif;
+  color: var(--white);
+}
+
+.img-txt {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+}
+
+.bullets {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+.sec {
+  position: absolute;
+  top: 15%;
+  left: 55%;
+}
+
+.b-two {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+}
+
+.bullets .points {
+  font-size: 18px;
+  font-family: envision regular, sans-serif;
+  color: var(--envision-gray);
+  margin: 15px 0;
+}
+
+
+.points::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("./img/arrowdown.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -30px;
+  margin-top: 2px;
+}
+
+.points:first-child:before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("./img/arrowup.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -30px;
+  margin-top: 2px;
+}
+
 
 .txt-black {
   color: var(--black);
