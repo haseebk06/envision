@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const lenis = new Lenis({
       duration: 4,
       smoothWheel: true,
-      smoothTouch: false,
+      smoothTouch: true,
       direction: "vertical",
     });
 
@@ -21,11 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
       yPercent: 100,
     });
 
-    gsap.set(".connection", {
-      height: 5,
+    gsap.set(".connect", {
+      height: 0,
     });
 
-    gsap.to("body", {
+    gsap.set(".connect-two", {
+      height: 0,
+    });
+
+    gsap.to(".container", {
       scrollTrigger: {
         trigger: ".scene-two",
         start: "top top",
@@ -34,16 +38,16 @@ document.addEventListener("DOMContentLoaded", function () {
       background: "var(--dark-bluey)",
     });
 
-    gsap.to("body", {
+    gsap.to(".container", {
       scrollTrigger: {
         trigger: ".scene-four",
-        start: "bottom 100px",
+        start: "bottom 200px",
         scrub: true,
       },
       background: "var(--off-white)",
     });
 
-    gsap.to("body", {
+    gsap.to(".container", {
       scrollTrigger: {
         trigger: ".base-img-wrapper",
         start: "top 90%",
@@ -52,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       background: "var(--dark-bluey)",
     });
 
-    gsap.to("body", {
+    gsap.to(".container", {
       scrollTrigger: {
         trigger: ".txt-six",
         start: "top -50px",
@@ -79,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
         end: "+=2600",
         pin: true,
         toggleActions: "restart none reverse none",
-        // markers: true
       },
       yPercent: 0,
       duration: 1.7,
@@ -297,6 +300,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  
+  gsap.to(".connect", {
+    scrollTrigger: {
+      trigger: ".connection",
+      start: "top center",
+      end: "+500",
+      toggleActions: "restart none reverse none",
+      // markers: true
+    },
+    height: 480,
+    duration: 1.5,
+  });
+
+  ScrollTrigger.create({
+    trigger: ".connection",
+    start: "top 70%",
+    end: "+=700",
+    pin: true,
+    // markers: true
+  })
+  
+  gsap.to(".connect-two", {
+    scrollTrigger: {
+      trigger: ".connection-two",
+      start: "top 20%",
+      end: "+500",
+      toggleActions: "restart none reverse none",
+    },
+    height: 1500,
+    duration: 2
+  });
+
+  ScrollTrigger.create({
+    trigger: ".scene-three",
+    start: "top center",
+    end: "+=600",
+    pin: ".connection-two",
+  })
+
   LottieScrollTrigger({
     target: ".scene-one",
     path: "https://lottie.host/4716a4fa-952f-4e6b-b635-a801cb0cd60f/WILaX0swxJ.json",
@@ -305,26 +347,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // markers: true,
   });
 
-  gsap.to(".connection", {
-    scrollTrigger: {
-      trigger: ".connection",
-      start: "top 80%",
-      end: "+=200",
-      pin: true,
-      scrub: 3,
-      // markers: true
-    },
-    height: 310,
-    ease: "Expo.easeIn",
-  });
 
-  // ScrollTrigger.create({
-  //   trigger: ".connection",
-  //   start: "top 100px",
-  //   end: "+=1500",
-  //   pin: true,
-  //   // markers: true
-  // })
+
 
   const races = document.querySelector(".sc-sv-img-wrapper");
   console.log(races.offsetWidth);
