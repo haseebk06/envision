@@ -108,7 +108,7 @@ html.lenis body {
 .four {
   /* top: -30rem; */
   padding: 0 5rem;
-  background-color: var(--off-white);
+  background-color: var(--dark-bluey);
 }
 
 .five {
@@ -125,23 +125,73 @@ html.lenis body {
 .seven {
   padding: 0 5rem;
   padding-left: 10vw;
-  background-color: var(--off-white);
+  background-color: var(--dark-bluey);
 }
 
 .sc-sv-img-wrapper {
   display: flex;
   flex-wrap: nowrap;
-  height: 100vh;
   width: fit-content;
+  min-width: 100%;
+  position: relative;
+  height: 100vh;
+  background: var(--dark-bluey);
 }
 
 .sc-sev-img {
   position: relative;
+  width: 100vw;
 }
 
-.sc-sev-img img {
-  width: fit-content;
+.sc-sev-img .img {
+  max-width: 100%;
+  z-index: 1;
+}
+
+.sc-one::after {
+  content: "";
+  width: 100vw;
   height: 100vh;
+  background: var(--white);
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  clip-path: polygon(100% 0%, 0% 112%, 100% 100%);
+}
+
+.sc-two {
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-three {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+}
+
+.sc-three::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--dark-bluey);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 0 0%, 100% 100%);
+  z-index: 0;
+}
+
+.truck {
+  position: absolute;
+  max-width: 100%;
+  bottom: 5rem;
+  left: 30%;
+  z-index: -1;
 }
 
 .scnz-wrapper {
@@ -320,12 +370,14 @@ html.lenis body {
 
 .img-txt {
   position: absolute;
-  top: 15%;
+  z-index: 3;
   left: 20%;
+  top: 15%;
 }
 
 .bullets {
   position: absolute;
+  z-index: 3;
   top: 40%;
   left: 50%;
 }
@@ -373,8 +425,17 @@ html.lenis body {
   margin-top: 2px;
 }
 
+.x-axis {
+  position: absolute;
+  z-index: 4;
+  left: 54.7%;
+  bottom: 28%;
+  height: 2px;
+  background: var(--light-bluey);
+}
+
 .txt-black {
-  color: var(--black);
+  color: var(--white);
   font-size: clamp(1rem, -1.8125rem + 9.375vw, 4rem);
 }
 
@@ -418,85 +479,105 @@ html.lenis body {
   .container {
     display: none;
   }
+
   .mobile-container {
     padding: 5rem 0;
   }
+
   .spacer {
     display: none;
   }
+
   .hero-txt-wrapper {
     height: 80%;
   }
+
   .m-one {
     position: relative;
     top: -15rem;
     z-index: 2;
   }
+
   .m-two {
     position: relative;
     top: -15rem;
-    background: var(--off-white);
+    background: var(--dark-bluey);
   }
+
   .m-txt-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 10vw;
   }
+
   .m-txt {
     margin: auto;
     color: var(--white);
     font-size: clamp(1rem, -1.8125rem + 9.375vw, 4rem);
     font-family: envision regular;
   }
+
   .m-txt-white {
     height: 40vh;
     margin: auto;
-    color: var(--black);
+    color: var(--white);
     font-size: clamp(1.5rem, -1.8125rem + 9.375vw, 4.5rem);
     font-family: envision regular;
   }
+
   .m-img-wrapper {
     padding: 0 10vw;
   }
+
   .m-small {
     font-size: clamp(1rem, -0.5rem + 8vw, 1.5rem);
   }
+
   .m-large {
     text-align: center;
     font-size: clamp(1rem, -1.625rem + 14vw, 1.2rem);
   }
+
   .sc-sev-img img {
     width: 100%;
     height: 100%;
   }
+
   .sc-sv-img-wrapper {
     flex-direction: column;
   }
+
   .img-txt p {
     font-size: clamp(1rem, 0.7109rem + 4.2969vw, 1.5rem);
   }
+
   .img-txt {
     top: 0%;
   }
+
   .bullets .points {
     font-size: 12px;
     margin: 8px 0;
   }
+
   .points:first-child:before {
     width: 12px;
     height: 12px;
     background-size: contain;
   }
+
   .points::before {
     width: 12px;
     height: 12px;
     background-size: contain;
   }
+
   .bullets {
     top: 35%;
     left: 20%;
   }
+
   .b-two {
     left: 60%;
   }
