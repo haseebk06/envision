@@ -38,33 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
       background: "var(--dark-bluey)",
     });
 
-    gsap.to(".container", {
-      scrollTrigger: {
-        trigger: ".scene-four",
-        start: "bottom 200px",
-        scrub: true,
-      },
-      background: "var(--off-white)",
-    });
-
-    gsap.to(".container", {
-      scrollTrigger: {
-        trigger: ".base-img-wrapper",
-        start: "top 90%",
-        scrub: true,
-      },
-      background: "var(--dark-bluey)",
-    });
-
-    gsap.to(".container", {
-      scrollTrigger: {
-        trigger: ".txt-six",
-        start: "top -50px",
-        scrub: true,
-      },
-      background: "var(--off-white)",
-    });
-
     gsap.to(".hero-txt", {
       scrollTrigger: {
         trigger: ".hero",
@@ -137,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-one",
         start: "top top",
-        end: "+=500",
+        end: "+=600",
         pin: true,
         toggleActions: "restart none reverse none",
       },
@@ -151,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-two",
         start: "top top",
-        end: "+=500",
+        end: "+=600",
         pin: true,
         toggleActions: "restart none reverse none",
       },
@@ -165,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-three",
         start: "top top",
-        end: "+=500",
+        end: "+=600",
         pin: true,
         toggleActions: "restart none reverse none",
       },
@@ -179,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-four",
         start: "top top",
-        end: "+=450",
+        end: "+=550",
         pin: true,
         toggleActions: "restart none reverse none",
       },
@@ -337,16 +310,34 @@ document.addEventListener("DOMContentLoaded", function () {
         end: "+500",
         toggleActions: "restart none reverse none",
       },
-      height: "165vh",
+      height: "170vh",
       duration: 2,
     });
 
     ScrollTrigger.create({
+      trigger: ".scene-two",
+      start: "top top",
+      end: "+=1500",
+      pin: ".connection",
+    });
+
+    gsap.to(".x-axis", {
+      scrollTrigger: {
+        trigger: ".x-axis",
+        start: "top 70%",
+        end: "+=1500",
+        toggleActions: "restart",
+        scrub: true,
+      },
+      width: "120vw",
+    })
+
+    ScrollTrigger.create({
       trigger: ".scene-three",
       start: "top center",
-      end: "+=650",
+      end: "+=1500",
       pin: ".connection-two",
-    });
+    }); 
 
     LottieScrollTrigger({
       target: ".scene-one",
@@ -412,10 +403,18 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: 4,
     });
 
+    LottieScrollTrigger({
+      target: ".scene-six-a",
+      path: "https://lottie.host/0a4853f8-cfb4-42ef-865d-3258a6f97809/OZNlBafWaS.json",
+      speed: "extraSlow",
+      start: "top 15%",
+      scrub: 4,
+    });
+
     function LottieScrollTrigger(vars) {
       let playhead = { frame: vars.startFrameOffset || 0 },
         target = gsap.utils.toArray(vars.target)[0],
-        speeds = { slow: "+=1500", medium: "+=1000", fast: "+=500" },
+        speeds = {extraSlow: "+=5350", slow: "+=1500", medium: "+=1000", fast: "+=500" },
         st = {
           trigger: target,
           pin: true,
