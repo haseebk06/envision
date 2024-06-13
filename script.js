@@ -81,13 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.to(".txt-three .line", {
       scrollTrigger: {
         trigger: ".txt-three",
-        start: "top 35%",
-        end: "+=600",
+        start: "top 20%",
+        end: "+=1200",
+        scrub: true,
         pin: true,
-        toggleActions: "restart none reverse none",
       },
       yPercent: 0,
-      duration: 1.7,
+      duration: 1.5,
       stagger: 0.09,
       ease: "Expo.easeInOut",
     });
@@ -95,10 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.to(".txt-four .line", {
       scrollTrigger: {
         trigger: ".txt-four",
-        start: "top 35%",
-        end: "+=400",
+        start: "top 30%",
+        end: "+=1200",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -110,9 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-one",
         start: "top top",
-        end: "+=600",
+        end: "+=100%",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -124,9 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-two",
         start: "top top",
-        end: "+=600",
+        end: "+=100%",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -138,9 +138,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-three",
         start: "top top",
-        end: "+=600",
+        end: "+=100%",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -152,9 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-four",
         start: "top top",
-        end: "+=550",
+        end: "+=90%",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -166,9 +166,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".last-one",
         start: "top top",
-        end: "+=500",
+        end: "+=100%",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -180,7 +180,8 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".last-two",
         start: "top top",
-        end: "+=500",
+        end: "+=100%",
+        scrub: true,
         pin: true,
         toggleActions: "restart none reverse none",
       },
@@ -194,9 +195,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".last-three",
         start: "top top",
-        end: "+=500",
+        end: "+=100%",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -208,9 +209,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".last-four",
         start: "top top",
-        end: "+=500",
+        end: "+=100%",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -222,9 +223,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".last-five",
         start: "top top",
-        end: "+=500",
+        end: "+=100%",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -264,10 +265,10 @@ document.addEventListener("DOMContentLoaded", function () {
         start: "top 80%",
         end: "+=100",
         pin: true,
-        toggleActions: "restart none reverse none",
+        scrub: 2,
       },
       yPercent: 0,
-      duration: 1,
+      duration: 1.7,
       stagger: 0.09,
       ease: "Expo.easeInOut",
     });
@@ -325,11 +326,11 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".x-axis",
         start: "top 70%",
-        end: "+=1500",
-        toggleActions: "restart",
+        end: "+=2200",
         scrub: true,
+        // markers: true,
       },
-      width: "120vw",
+      width: "150vw",
     })
 
     ScrollTrigger.create({
@@ -391,7 +392,7 @@ document.addEventListener("DOMContentLoaded", function () {
     LottieScrollTrigger({
       target: ".scene-four",
       path: "https://lottie.host/21116ad4-df06-4b4c-ab21-fb567881962d/oSMtqw2UVp.json",
-      speed: "slow",
+      speed: "extraSlow",
       scrub: 4,
       // markers: true,
     });
@@ -414,7 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function LottieScrollTrigger(vars) {
       let playhead = { frame: vars.startFrameOffset || 0 },
         target = gsap.utils.toArray(vars.target)[0],
-        speeds = {extraSlow: "+=5350", slow: "+=1500", medium: "+=1000", fast: "+=500" },
+        speeds = {extraSlow: "+=3000", slow: "+=1500", medium: "+=1000", fast: "+=500" },
         st = {
           trigger: target,
           pin: true,
