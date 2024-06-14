@@ -162,6 +162,15 @@ img.vector {
   z-index: 5;
 }
 
+.x-axis {
+  position: absolute;
+  z-index: 4;
+  left: 72vw;
+  top: 62.5vh;
+  height: 2px;
+  background: var(--light-bluey);
+}
+
 .sc-one::after {
   content: "";
   width: 100vw;
@@ -313,7 +322,7 @@ img.vector {
   width: 100%;
 }
 
-.sec-one-wrapper .line-wrapper{
+.sec-one-wrapper .line-wrapper {
   transform: scale(1.5);
 }
 
@@ -366,7 +375,7 @@ img.vector {
 }
 
 .base-img-wrapper img {
-  max-width: 50%;
+  width: 70%;
 }
 
 .line-wrapper {
@@ -442,15 +451,6 @@ img.vector {
   margin-top: 2px;
 }
 
-.x-axis {
-  position: absolute;
-  z-index: 4;
-  left: 72vw;
-  top: 62.5vh;
-  height: 2px;
-  background: var(--light-bluey);
-}
-
 .txt-black {
   color: var(--white);
   font-size: clamp(1rem, -1.8125rem + 9.375vw, 4rem);
@@ -489,6 +489,34 @@ img.vector {
 @media (min-width: 991px) {
   .mobile-container {
     display: none;
+  }
+}
+
+@media (max-width: 1920px) {
+  .x-axis {
+    left: 74vw;
+    top: 67.5dvh;
+  }
+}
+
+@media (max-width: 1706.67px) {
+  .x-axis {
+    left: 76vw;
+    top: 75dvh;
+  }
+}
+
+@media (max-width: 1536px) {
+  img.vector {
+    top: 2vh;
+    left: 54vw;
+  }
+}
+
+@media (max-width: 1396.36px) {
+  .x-axis {
+    left: 79vw;
+    top: 83dvh;
   }
 }
 

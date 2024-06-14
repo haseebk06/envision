@@ -42,11 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        end: "bottom top",
+        end: "+=300",
         scrub: true,
       },
-      y: -800,
-      opacity: 0,
+      y: -200,
     });
 
     gsap.to(".txt-one .line", {
@@ -233,20 +232,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ease: "Expo.easeInOut",
     });
 
-    const tl_two = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".base-img-wrapper",
-        start: "top -20px",
-        end: "+=3200px",
-        pin: true,
-        scrub: true,
-      }
-    })
-
-    tl_two.to(".base-img-wrapper", {
-      opacity: 0.3,
-    }).to(".base-img-wrapper", { opacity: 0, delay: 1 }, 0.5);
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".txt-five",
@@ -354,7 +339,6 @@ document.addEventListener("DOMContentLoaded", function () {
         start: "top 70%",
         end: "+=2200",
         scrub: true,
-        // markers: true,
       },
       width: "150vw",
     })
@@ -429,13 +413,27 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: 4,
     }
   );
+  
+  const tl_two = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".base-img-wrapper",
+      start: "top -12%",
+      end: "+=3000px",
+      pin: true,
+      scrub: true,
+    }
+  })
 
-  gsap.to(".scene-five", {
+  tl_two.to(".base-img-wrapper", {
+    opacity: 0.3,
+  }).to(".base-img-wrapper", { opacity: 0, });
+
+  tl_two.to(".scene-five", {
     opacity: 1,
     scrollTrigger: {
       trigger: ".scene-five",
       start: "top top",
-      scrub: 4
+      scrub: true
     }
   });
 
