@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".con-four",
         start: "top top",
-        end: "+=90%",
+        end: "+=80%",
         pin: true,
         scrub: true,
       },
@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tl_two = gsap.timeline({
     scrollTrigger: {
       trigger: ".base-img-wrapper",
-      start: "top -12%",
+      start: "top -8%",
       end: "+=3000px",
       pin: true,
       scrub: true,
