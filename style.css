@@ -150,9 +150,16 @@ html.lenis body {
 
 .sc-one .img {
   position: relative;
+  z-index: 3;
+  /* width: 100%;
+  height: 600px; */
+}
+
+img.vector {
+  position: absolute;
+  top: 9vh;
+  left: 56vw;
   z-index: 5;
-  width: 100%;
-  height: 600px;
 }
 
 .sc-one::after {
@@ -235,6 +242,7 @@ html.lenis body {
 }
 
 .txt-wrapper {
+  position: relative;
   width: 50%;
 }
 
@@ -269,6 +277,9 @@ html.lenis body {
   justify-content: flex-start;
   height: 100vh;
   width: 100%;
+  /* position: sticky;
+  top: 20%;
+  z-index: 1;  */
 }
 
 .txt-four {
@@ -278,6 +289,8 @@ html.lenis body {
   justify-content: flex-start;
   height: 100vh;
   width: 100%;
+  /* position: sticky;
+  top: 20%; */
 }
 
 .txt-five {
@@ -300,12 +313,8 @@ html.lenis body {
   width: 100%;
 }
 
-.sec-one-wrapper {
-  margin-bottom: 3rem;
-}
-
-.sec-two-wrapper {
-  margin-bottom: 9rem;
+.sec-one-wrapper .line-wrapper{
+  transform: scale(1.5);
 }
 
 .conceptual-wrapper {
@@ -341,6 +350,7 @@ html.lenis body {
 .scene-five {
   margin: auto;
   width: 70%;
+  opacity: 0;
 }
 
 .space {
@@ -435,8 +445,8 @@ html.lenis body {
 .x-axis {
   position: absolute;
   z-index: 4;
-  left: 74.5%;
-  bottom: 31.3%;
+  left: 72vw;
+  top: 62.5vh;
   height: 2px;
   background: var(--light-bluey);
 }
