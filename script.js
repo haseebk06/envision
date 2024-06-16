@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
   let mm = gsap.matchMedia();
 
-  mm.add("(min-width: 991px)", () => {
+  mm.add("(min-width: 1024px)", () => {
     const lenis = new Lenis({
       duration: 4,
       smoothWheel: true,

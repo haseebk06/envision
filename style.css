@@ -155,20 +155,24 @@ html.lenis body {
   height: 600px; */
 }
 
-img.vector {
+.setter {
   position: absolute;
-  top: 9vh;
-  left: 56vw;
-  z-index: 5;
+  left: 60%;
+  top: 0;
 }
 
 .x-axis {
   position: absolute;
-  z-index: 4;
-  left: 72vw;
-  top: 62.5vh;
+  left: 95%;
+  top: 97%;
+  z-index: 3;
   height: 2px;
   background: var(--light-bluey);
+}
+
+.vector{
+  position: relative;
+  z-index: 4;
 }
 
 .sc-one::after {
@@ -453,7 +457,7 @@ img.vector {
 
 .txt-black {
   color: var(--white);
-  font-size: clamp(1rem, -1.8125rem + 9.375vw, 4rem);
+  font-size: clamp(1rem, -1.8125rem + 9.375vw, 3rem);
 }
 
 .txt-small {
@@ -486,41 +490,13 @@ img.vector {
   text-decoration: none;
 }
 
-@media (min-width: 991px) {
+@media (min-width: 1024px) {
   .mobile-container {
     display: none;
   }
 }
 
-@media (max-width: 1920px) {
-  .x-axis {
-    left: 74vw;
-    top: 67.5dvh;
-  }
-}
-
-@media (max-width: 1706.67px) {
-  .x-axis {
-    left: 76vw;
-    top: 75dvh;
-  }
-}
-
-@media (max-width: 1536px) {
-  img.vector {
-    top: 2vh;
-    left: 54vw;
-  }
-}
-
-@media (max-width: 1396.36px) {
-  .x-axis {
-    left: 79vw;
-    top: 83dvh;
-  }
-}
-
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .container {
     display: none;
   }
@@ -548,11 +524,15 @@ img.vector {
     top: -15rem;
     background: var(--dark-bluey);
   }
+  
+  .m-three {
+    position: relative;
+    top: 65rem;
+  }
 
   .m-txt-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 0 10vw;
   }
 
@@ -564,8 +544,6 @@ img.vector {
   }
 
   .m-txt-white {
-    height: 40vh;
-    margin: auto;
     color: var(--white);
     font-size: clamp(1.5rem, -1.8125rem + 9.375vw, 4.5rem);
     font-family: envision regular;
@@ -591,6 +569,11 @@ img.vector {
 
   .sc-sv-img-wrapper {
     flex-direction: column;
+  }
+
+  .sc-one::after {
+    z-index: 0;
+    clip-path: polygon(100% 0%, -265% 112%, 100% 100%);
   }
 
   .img-txt p {
