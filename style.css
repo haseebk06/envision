@@ -457,7 +457,7 @@ html.lenis body {
 
 .txt-black {
   color: var(--white);
-  font-size: clamp(1rem, -1.8125rem + 9.375vw, 3rem);
+  font-size: clamp(1rem, -1.8125rem + 9.375vw, 2.8rem);
 }
 
 .txt-small {
