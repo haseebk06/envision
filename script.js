@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".txt-one",
         start: "top top",
-        end: "+=2600",
+        end: "+=3000",
         pin: true,
         toggleActions: "restart none reverse none",
       },
@@ -77,27 +77,30 @@ document.addEventListener("DOMContentLoaded", function () {
       ease: "Expo.easeInOut",
     });
 
-    gsap.to(".txt-three .line", {
+    sc_tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".txt-three",
-        start: "top 20%",
-        end: "+=1200",
+        start: "top top",
+        end: "+=2000",
         scrub: true,
-        pin: true
+        pin: true,
       },
+    });
+
+    sc_tl.to(".txt-three .line", {
       yPercent: 0,
       duration: 1.5,
       stagger: 0.09,
       ease: "Expo.easeInOut",
-    });
+    }).to(".txt-three .line", {yPercent: -100, duration: 1.5, stagger: 0.09, ease: "Expo.easeInOut"});
 
     gsap.to(".txt-four .line", {
       scrollTrigger: {
         trigger: ".txt-four",
-        start: "top 30%",
-        end: "+=1200",
+        start: "top top",
+        end: "+=1500",
         scrub: true,
-        pin: true
+        pin: true,
       },
       yPercent: 0,
       duration: 1.7,
@@ -238,37 +241,44 @@ document.addEventListener("DOMContentLoaded", function () {
         start: "top center",
         end: "+=1000",
         scrub: true,
-        // markers: true
       },
-    })
+    });
 
     ScrollTrigger.create({
       trigger: ".txt-five",
       start: "top center",
       end: "+=1000",
       pin: true,
-    })
+    });
 
     tl.to(".sec-one-wrapper .line", {
       yPercent: 0,
       duration: 1,
       stagger: 0.09,
       ease: "Expo.easeInOut",
-    }).to(".sec-one-wrapper .line-wrapper", { y: -300, scale: 1, duration: 1 }, 1)
+    }).to(
+      ".sec-one-wrapper .line-wrapper",
+      { y: -300, scale: 1, duration: 1 },
+      1
+    );
 
     tl.to(".sec-two-wrapper .line", {
       yPercent: 0,
       duration: 1,
       stagger: 0.09,
       ease: "Expo.easeInOut",
-    }).to(".sec-two-wrapper .line-wrapper", { y: -200 })
+    }).to(".sec-two-wrapper .line-wrapper", { y: -200 });
 
     tl.to(".sec-three-wrapper .line", {
       yPercent: 0,
       duration: 1,
       stagger: 0.09,
       ease: "Expo.easeInOut",
-    }).to(".sec-two-wrapper .line-wrapper", { y: -100, scale: 1, duration: 1 }, 1)
+    }).to(
+      ".sec-two-wrapper .line-wrapper",
+      { y: -100, scale: 1, duration: 1 },
+      1
+    );
 
     gsap.to(".txt-six .line", {
       scrollTrigger: {
@@ -303,45 +313,43 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleActions: "restart none reverse none",
         // markers: true
       },
-      height: "80vh",
+      height: "70vh",
       duration: 1.5,
     });
 
     ScrollTrigger.create({
       trigger: ".connection",
-      start: "top 70%",
+      start: "top 65%",
       end: "+=700",
       pin: true,
-      // markers: true
     });
 
     gsap.to(".connect-two", {
       scrollTrigger: {
         trigger: ".connection-two",
         start: "top 20%",
-        end: "+500",
-        toggleActions: "restart none reverse none",
+        end: "+=1500",
+        scrub: 3,
       },
-      height: "170vh",
-      duration: 2,
+      height: "171vh",
     });
 
     ScrollTrigger.create({
       trigger: ".scene-two",
       start: "top top",
-      end: "+=1500",
+      end: "+=3000",
       pin: ".connection",
     });
 
     gsap.to(".x-axis", {
       scrollTrigger: {
         trigger: ".x-axis",
-        start: "top 70%",
-        end: "+=2200",
-        scrub: true,
+        start: "top center",
+        end: "+=3500",
+        scrub: 1,
       },
       width: "150vw",
-    })
+    });
 
     ScrollTrigger.create({
       trigger: ".scene-three",
@@ -385,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
     LottieScrollTrigger({
       target: ".scene-two",
       path: "https://lottie.host/b60a2260-32b4-4b53-8bd0-b5040d12324b/eAH7C0xk3i.json",
-      speed: "slow",
+      speed: "extraSlow",
       scrub: 4,
       // markers: true,
     });
@@ -403,42 +411,42 @@ document.addEventListener("DOMContentLoaded", function () {
       path: "https://lottie.host/21116ad4-df06-4b4c-ab21-fb567881962d/oSMtqw2UVp.json",
       speed: "extraSlow",
       scrub: 4,
-      // markers: true,
     });
 
     LottieScrollTrigger({
       target: ".scene-five",
       path: "https://lottie.host/b5a27330-06d3-460d-ac7f-278b3e982263/PviNuyyT0k.json",
-      speed: "medium",
+      speed: "slow",
       scrub: 4,
-    }
-  );
-  
-  const tl_two = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".base-img-wrapper",
-      start: "top -8%",
-      end: "+=3000px",
-      pin: true,
-      scrub: true,
-    }
-  })
+    });
 
-  tl_two.to(".base-img-wrapper", {
-    opacity: 0.3,
-  }).to(".base-img-wrapper", { opacity: 0, });
+    const tl_two = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".base-img-wrapper",
+        start: "top top",
+        end: "+=3200px",
+        pin: true,
+        scrub: true,
+      },
+    });
 
-  tl_two.to(".scene-five", {
-    opacity: 1,
-    scrollTrigger: {
-      trigger: ".scene-five",
-      start: "top top",
-      scrub: true
-    }
-  });
+    tl_two
+      .to(".base-img-wrapper", {
+        opacity: 0.3,
+      })
+      .to(".base-img-wrapper", { opacity: 0 });
+
+    tl_two.to(".scene-five", {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".scene-five",
+        start: "top top",
+        scrub: true,
+      },
+    });
 
     LottieScrollTrigger({
-      target: ".scene-six-a",
+      target: ".scene-six",
       path: "https://lottie.host/0a4853f8-cfb4-42ef-865d-3258a6f97809/OZNlBafWaS.json",
       speed: "extraSlow",
       start: "top 15%",
@@ -448,7 +456,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function LottieScrollTrigger(vars) {
       let playhead = { frame: vars.startFrameOffset || 0 },
         target = gsap.utils.toArray(vars.target)[0],
-        speeds = { extraSlow: "+=3000", slow: "+=1500", medium: "+=1000", fast: "+=500" },
+        speeds = {
+          extraSlow: "+=3000",
+          slow: "+=1500",
+          medium: "+=1000",
+          fast: "+=500",
+        },
         st = {
           trigger: target,
           pin: true,
