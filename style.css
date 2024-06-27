@@ -13,9 +13,12 @@ body,
 html {
   margin: 0;
   padding: 0;
-  background-color: var(--dark-bluey);
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+main.envision {
+  background-color: var(--dark-bluey);
 }
 
 html.lenis,
@@ -172,7 +175,7 @@ html.lenis body {
   background: var(--line-two);
 }
 
-.vector{
+.vector {
   position: relative;
   z-index: 4;
 }
@@ -242,7 +245,7 @@ html.lenis body {
   justify-content: center;
   position: absolute;
   top: -40%;
-  left: 73%;
+  right: 26.4%;
   z-index: 1;
 }
 
@@ -489,6 +492,7 @@ html.lenis body {
   border-radius: 10px;
   padding: 1rem;
   font-size: 18px;
+  margin-top: 10px;
   cursor: pointer;
   transition: all ease .5s;
 }
@@ -501,6 +505,13 @@ html.lenis body {
 .btn a {
   color: var(--white);
   text-decoration: none;
+}
+
+
+@media (max-width: 1536px) {
+  .connection-two {
+    right: 27%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -537,10 +548,11 @@ html.lenis body {
     top: -15rem;
     background: var(--dark-bluey);
   }
-  
+
   .m-three {
+    background: var(--dark-bluey);
     position: relative;
-    top: 65rem;
+    top: 5rem;
   }
 
   .m-txt-wrapper {
@@ -552,7 +564,7 @@ html.lenis body {
   .m-txt {
     margin: auto;
     color: var(--white);
-    font-size: clamp(1rem, -1.8125rem + 9.375vw, 4rem);
+    font-size: clamp(1.5rem, -1.8125rem + 9.375vw, 4.5rem);
     font-family: envision regular;
   }
 
@@ -572,7 +584,7 @@ html.lenis body {
 
   .m-large {
     text-align: center;
-    font-size: clamp(1rem, -1.625rem + 14vw, 1.2rem);
+    font-size: clamp(1.5rem, -1.8125rem + 9.375vw, 4.5rem);
   }
 
   .sc-sev-img img {
@@ -626,5 +638,34 @@ html.lenis body {
   .btn-wrapper {
     opacity: 1;
     padding: 0 10vw;
+  }
+
+  .btn {
+    padding: .7rem;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .m-three {
+    background: var(--dark-bluey);
+    position: relative;
+    top: 45rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .m-three {
+    background: var(--dark-bluey);
+    position: relative;
+    top: 15rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .m-three {
+    background: var(--dark-bluey);
+    position: relative;
+    top: -25rem;
   }
 }
